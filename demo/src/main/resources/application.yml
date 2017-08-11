@@ -1,0 +1,44 @@
+server:
+  port: 8081
+mybatis:
+  mapperLocations: classpath:mappers/*.xml
+girl:
+  age: 18
+  grade: 1
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://mysql-aton.aliyun.com/aton?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+    username: aton
+    password: aton
+  jpa:
+    show-sql: true
+  redis:
+    database: 0
+    host: 192.168.99.100
+    port: 6666
+    timeout: 0
+    pool:
+      max-active: 8
+      max-wait: 300
+      max-idle: 8
+      min-idle: 0
+  aop:
+    proxy-target-class: false
+  cloud:
+      config:
+        server:
+          git:
+            uri: https://github.com/qll3609120/ProjectResource.git
+            searchPaths: src
+            username: qll3609120
+            password: q3609120
+  application:
+    name: eureka-server
+  jersey:
+    type: filter
+eureka:
+  client:
+    serviceUrl:
+       defaultZone: http://127.0.0.1:8888/eureka/
+
